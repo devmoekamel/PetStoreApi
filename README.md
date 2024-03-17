@@ -1,6 +1,7 @@
 # PetStore API
 
-a .NET-based RESTful API for managing pet-related information. This API serves as the backend system for a pet store application, facilitating the management of pets, customers, orders
+a .NET-based RESTful API for managing pet-related information. This API serves as the backend system for a pet store application, facilitating the management of pets, customers, orders.
+
 ## Table of Contents
 
 - [Project Structure](#project-structure)
@@ -49,8 +50,41 @@ To run the PetStore API locally, follow these steps:
 
 Authentication in the PetStore API is based on JWT tokens. To access protected endpoints, clients must include a valid JWT token in the `Authorization` header of the HTTP request. Users can obtain JWT tokens by registering or logging in through the appropriate endpoints.
 
+## Class Diagram
+
+```plaintext
+ _____________________________        1           _____________________________
+|           Pet               |---------------->|          Order              |
+|-----------------------------|       *        |-----------------------------|
+| Id: int                     |                | Id: int                     |
+| Name: string                |                | Quantity: int               |
+| Age: int                    |                | ShipDate: DateTime          |
+| Cost: double                |                | UserId: string              |
+| Orders: List<Order>         |                | PetId: int                  |
+|-----------------------------|                |-----------------------------|
+|                             |                |                             |
+|_____________________________|                |_____________________________|
+     |
+     |
+     |
+     |
+     |
+     |
+     |
+     |
+     V
+ _____________________________         1        _______________________________
+|       ApplicationUser      |<---------------|           Pet                 |
+|-----------------------------|       *       |-----------------------------|
+| Id: string                  |               | Id: int                     |
+| FirstName: string           |               | Name: string                |
+| LastName: string            |               | Age: int                    |
+| Orders: List<Order>         |               | Cost: double                |
+|-----------------------------|               | Orders: List<Order>         |
+|                             |               |-----------------------------|
+|_____________________________|               |_____________________________|
+```
+
 ## Conclusion
 
 Thank you for exploring the PetStore API project! I hope this repository demonstrates my proficiency in building scalable, secure, and well-documented APIs using ASP.NET Core. If you have any questions or feedback, feel free to reach out.
-
-
