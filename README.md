@@ -53,6 +53,4 @@ Authentication in the PetStore API is based on JWT tokens. To access protected e
 
 Thank you for exploring the PetStore API project! I hope this repository demonstrates my proficiency in building scalable, secure, and well-documented APIs using ASP.NET Core. If you have any questions or feedback, feel free to reach out.
 
----
 
-Feel free to customize this README further to highlight specific aspects of your project or to better showcase your skills.
